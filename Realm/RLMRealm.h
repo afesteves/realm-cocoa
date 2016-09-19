@@ -200,6 +200,7 @@ typedef void (^RLMNotificationBlock)(RLMNotification notification, RLMRealm *rea
  @return Whether the transaction succeeded.
  */
 - (BOOL)commitWriteTransaction:(NSError **)error;
+- (BOOL)commitWriteTransactionWithoutNotifying:(NSArray<RLMNotificationToken *> *)tokens error:(NSError **)error;
 
 /**
  Reverts all writes made during the current write transaction and ends the transaction.

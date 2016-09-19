@@ -228,6 +228,10 @@ NSString *RLMDescriptionWithMaxDepth(NSString *name,
     return self;
 }
 
+- (void)suppressNextNotification {
+    _token.suppress_next();
+}
+
 - (void)stop {
     _token = {};
 }

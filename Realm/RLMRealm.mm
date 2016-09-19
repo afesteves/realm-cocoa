@@ -425,6 +425,23 @@ REALM_NOINLINE void RLMRealmTranslateException(NSError **error) {
     }
 }
 
+- (BOOL)commitWriteTransactionWithoutNotifying:(NSArray<RLMNotificationToken *> *)tokens error:(NSError **)error {
+    for (id token in tokens) {
+        if ([token respondsToSelector:@selector(suppressNextNotification)]) {
+            [token suppressNextNotification];
+        }
+    }
+
+    try {
+        _realm->commit_transaction();
+        return YES;
+    }
+    catch (...) {
+        RLMRealmTranslateException(error);
+        return NO;
+    }
+}
+
 - (void)transactionWithBlock:(void(^)(void))block {
     [self transactionWithBlock:block error:nil];
 }

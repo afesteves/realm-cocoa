@@ -153,8 +153,8 @@ public final class Realm {
 
      - throws: An `NSError` if the transaction could not be written.
      */
-    public func commitWrite() throws {
-        try rlmRealm.commitWriteTransaction()
+    public func commitWrite(withoutNotifying tokens: [NotificationToken] = []) throws {
+        try rlmRealm.commitWriteTransactionWithoutNotifying(tokens)
     }
 
     /**
@@ -776,8 +776,8 @@ public final class Realm {
 
      - throws: An `NSError` if the transaction could not be written.
      */
-    public func commitWrite() throws {
-        try rlmRealm.commitWriteTransaction()
+    public func commitWrite(withoutNotifying tokens: [NotificationToken] = []) throws {
+        try rlmRealm.commitWriteTransactionWithoutNotifying(tokens)
     }
 
     /**

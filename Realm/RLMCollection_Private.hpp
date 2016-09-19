@@ -55,6 +55,7 @@ class RLMClassInfo;
 
 @interface RLMCancellationToken : RLMNotificationToken
 - (instancetype)initWithToken:(realm::NotificationToken)token;
+- (void)suppressNextNotification;
 @end
 
 @interface RLMCollectionChange ()
