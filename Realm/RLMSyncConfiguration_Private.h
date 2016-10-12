@@ -28,7 +28,7 @@ typedef NS_ENUM(NSUInteger, RLMSyncStopPolicy) {
 
 @interface RLMSyncConfiguration ()
 
-@property (nonatomic) RLMSyncStopPolicy stopPolicy;
+@property (nonatomic, readonly) RLMSyncStopPolicy stopPolicy;
 
 // Internal-only APIs
 @property (nullable, nonatomic) NSURL *customFileURL;

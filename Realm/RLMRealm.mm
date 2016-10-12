@@ -32,7 +32,7 @@
 #import "RLMQueryUtil.hpp"
 #import "RLMRealmUtil.hpp"
 #import "RLMSchema_Private.hpp"
-#import "RLMSyncManager_Private.hpp"
+#import "RLMSyncManager_Private.h"
 #import "RLMUpdateChecker.hpp"
 #import "RLMUtil.hpp"
 
